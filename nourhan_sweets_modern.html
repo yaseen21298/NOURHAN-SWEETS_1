@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nourhan Sweets</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #f9e6e7, #fff5f7);
+        margin: 0;
+        padding: 0;
+        color: #5b3a29;
+    }
+    header {
+        background-color: #e8b6b7;
+        padding: 15px 20px;
+        text-align: center;
+        font-size: 1.8em;
+        font-weight: bold;
+        color: #4a2f26;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .container {
+        max-width: 900px;
+        margin: 20px auto;
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #f2dede;
+        padding-bottom: 15px;
+    }
+    .item:last-child {
+        border-bottom: none;
+    }
+    .item img {
+        width: 120px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        margin-right: 20px;
+    }
+    .item .desc {
+        font-size: 1.1em;
+        font-weight: 600;
+        color: #803c30;
+    }
+    footer {
+        text-align: center;
+        padding: 15px;
+        color: #a56b64;
+        font-size: 0.9em;
+    }
+    /* Password screen */
+    #passwordScreen {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #f9e6e7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 1000;
+    }
+    #passwordScreen input {
+        padding: 10px 15px;
+        font-size: 1em;
+        border-radius: 5px;
+        border: 2px solid #e8b6b7;
+        margin-bottom: 10px;
+        width: 200px;
+        text-align: center;
+    }
+    #passwordScreen button {
+        padding: 10px 20px;
+        background-color: #e8b6b7;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+        color: #4a2f26;
+        font-weight: bold;
+    }
+    #passwordScreen button:hover {
+        background-color: #d39697;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+        .item {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .item img {
+            margin-bottom: 10px;
+            margin-right: 0;
+            width: 100%;
+            height: auto;
+        }
+    }
+</style>
+</head>
+<body>
+<div id="passwordScreen">
+    <input type="password" id="passwordInput" placeholder="Enter password" />
+    <button onclick="checkPassword()">Enter</button>
+    <p id="errorMsg" style="color:#a94442; display:none;">Wrong password, try again.</p>
+</div>
+
+<header>Nourhan Sweets</header>
+
+<div class="container" id="content" style="display:none;">
+
+  <div class="item">
+    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=150&q=80" alt="Quarter Kilo Basbousa" />
+    <div class="desc">Quarter Kilo Basbousa</div>
+  </div>
+
+  <div class="item">
+    <img src="https://images.unsplash.com/photo-1609225077718-09c2aa4205ef?auto=format&fit=crop&w=150&q=80" alt="Half Kilo Basbousa" />
+    <div class="desc">Half Kilo Basbousa</div>
+  </div>
+
+  <div class="item">
+    <img src="https://images.unsplash.com/photo-1583508517365-78f4a72f85c4?auto=format&fit=crop&w=150&q=80" alt="One Kilo Basbousa" />
+    <div class="desc">One Kilo Basbousa</div>
+  </div>
+
+  <div class="item">
+    <img src="https://images.unsplash.com/photo-1590080877777-8b41e1e44a6e?auto=format&fit=crop&w=150&q=80" alt="Half Kilo Kunafa with Mango" />
+    <div class="desc">Half Kilo Kunafa with Mango</div>
+  </div>
+
+  <div class="item">
+    <img src="https://images.unsplash.com/photo-1617191510701-7c2b9cba29cd?auto=format&fit=crop&w=150&q=80" alt="One Kilo Kunafa with Mango" />
+    <div class="desc">One Kilo Kunafa with Mango</div>
+  </div>
+
+  <div class="item">
+    <img src="https://images.unsplash.com/photo-1606312613432-0a4d2f3dbf12?auto=format&fit=crop&w=150&q=80" alt="White Chocolate" />
+    <div class="desc">White Chocolate</div>
+  </div>
+
+  <div class="item">
+    <img src="https://images.unsplash.com/photo-1588361867103-62c6d8a9d2c9?auto=format&fit=crop&w=150&q=80" alt="Sweet Delight" />
+    <div class="desc">Sweet Delight</div>
+  </div>
+
+  <div class="item">
+    <img src="https://images.unsplash.com/photo-1558021212-51b6a4ef06f4?auto=format&fit=crop&w=150&q=80" alt="Honey Baklava" />
+    <div class="desc">Honey Baklava</div>
+  </div>
+
+  <div class="item">
+    <img src="https://images.unsplash.com/photo-1615994573972-b76a79f1676d?auto=format&fit=crop&w=150&q=80" alt="Pistachio Rolls" />
+    <div class="desc">Pistachio Rolls</div>
+  </div>
+
+  <div class="item">
+    <img src="https://images.unsplash.com/photo-1542377284-c35a6a6ae9e7?auto=format&fit=crop&w=150&q=80" alt="Creamy Date Rolls" />
+    <div class="desc">Creamy Date Rolls</div>
+  </div>
+
+</div>
+
+<footer>
+  Nourhan Sweets &copy; 2025
+</footer>
+
+<script>
+function checkPassword() {
+  const input = document.getElementById('passwordInput').value;
+  const screen = document.getElementById('passwordScreen');
+  const content = document.getElementById('content');
+  const errorMsg = document.getElementById('errorMsg');
+  if(input === '1/1/2009') {
+    screen.style.display = 'none';
+    content.style.display = 'block';
+  } else {
+    errorMsg.style.display = 'block';
+  }
+}
+</script>
+
+</body>
+</html>
